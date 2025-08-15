@@ -118,7 +118,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     id,
     ...props 
   }, ref) => {
-    const inputId = id || `input-${React.useId()}`
+    const generatedId = React.useId()
+    const inputId = id || `input-${generatedId}`
     const hasError = Boolean(error)
 
     return (
@@ -164,7 +165,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     id,
     ...props 
   }, ref) => {
-    const textareaId = id || `textarea-${React.useId()}`
+    const generatedId = React.useId()
+    const textareaId = id || `textarea-${generatedId}`
     const hasError = Boolean(error)
 
     return (
