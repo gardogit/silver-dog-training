@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/ui/Navbar";
+import { Footer } from "@/components/ui/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,6 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://silverdogtraining.com'),
   title: "Silver Dog Training - Educamos Guías, Adiestramos Perros, Creamos Recuerdos",
   description: "Entrenamiento profesional de perros con el método NePoPo®. Especialistas en adiestramiento canino, detección K9 y protección. 8+ años de experiencia fortaleciendo vínculos entre guías y perros.",
   keywords: ["adiestramiento canino", "entrenamiento perros", "NePoPo", "K9", "detección canina", "protección canina", "Silver Dog Training"],
@@ -47,8 +50,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={inter.variable}>
-      <body className="font-sans antialiased">
-        {children}
+      <body className="font-sans antialiased min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
