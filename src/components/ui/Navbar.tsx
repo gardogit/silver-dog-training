@@ -2,9 +2,11 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { HiMenu, HiX } from 'react-icons/hi'
+import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'
 
 interface NavItem {
   href: string
@@ -13,6 +15,7 @@ interface NavItem {
 
 interface NavbarProps {
   className?: string
+  showSocialIcons?: boolean
 }
 
 const navItems: NavItem[] = [
@@ -22,7 +25,7 @@ const navItems: NavItem[] = [
   { href: '/contacto', label: 'Contacto' },
 ]
 
-const Navbar: React.FC<NavbarProps> = ({ className }) => {
+const Navbar: React.FC<NavbarProps> = ({ className, showSocialIcons = false }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
@@ -50,38 +53,78 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link 
-              href="/" 
-              className="flex items-center space-x-2 text-primary font-bold text-xl hover:text-primary-600 transition-colors duration-200"
+            <Link
+              href="/"
+              className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200"
               onClick={closeMobileMenu}
             >
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">SD</span>
-              </div>
-              <span className="hidden sm:block">Silver Dog Training</span>
+              <Image
+                src="/Logo-SilverDT.svg"
+                alt="Silver Dog Training"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+                priority
+              />
+              {/* <span className="hidden sm:block text-neutral-800 font-bold text-xl">
+                Silver Dog Training
+              </span> */}
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden md:flex items-center">
+            <div className="flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'px-3 py-2 rounded-md text-sm font-medium transition-all duration-200',
-                    'hover:text-primary hover:bg-primary-50',
-                    'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+                    'px-4 py-2 rounded-md text-sm transition-all duration-200',
+                    'hover:text-orange-700/80 hover:bg-orange-100/70',
+                    'focus:outline-none focus:ring-2 focus:ring-orange-700/80 focus:ring-offset-2',
                     isActiveLink(item.href)
-                      ? 'text-primary bg-primary-50 border-b-2 border-primary'
-                      : 'text-neutral-700'
+                      ? 'text-orange-700/80 bg-orange-100/70 border-b-2 border-orange-700/80 font-semibold'
+                      : 'text-neutral-700 font-medium'
                   )}
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
+
+            {/* Social Icons - Optional */}
+            {showSocialIcons && (
+              <div className="flex items-center space-x-3 ml-6 pl-6 border-l border-neutral-200">
+                <a
+                  href="https://facebook.com/silverdogtraining88"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 hover:text-blue-600 transition-colors duration-200"
+                  aria-label="Facebook"
+                >
+                  <FaFacebook className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://instagram.com/silverdogtraining88"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 hover:text-pink-600 transition-colors duration-200"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://tiktok.com/@silverdogtraining"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 hover:text-black transition-colors duration-200"
+                  aria-label="TikTok"
+                >
+                  <FaTiktok className="w-5 h-5" />
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -89,9 +132,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             <button
               onClick={toggleMobileMenu}
               className={cn(
-                'inline-flex items-center justify-center p-2 rounded-md',
-                'text-neutral-700 hover:text-primary hover:bg-primary-50',
-                'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+                'inline-flex items-center justify-center p-2 rounded-full',
+                'text-neutral-700 hover:text-orange-700/80 hover:bg-orange-100/70',
+                'focus:outline-none focus:ring-2 focus:ring-orange-700/80 focus:ring-offset-2',
                 'transition-colors duration-200'
               )}
               aria-expanded={isMobileMenuOpen}
@@ -109,8 +152,8 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         {/* Mobile Navigation Menu */}
         <div className={cn(
           'md:hidden transition-all duration-300 ease-in-out overflow-hidden',
-          isMobileMenuOpen 
-            ? 'max-h-64 opacity-100 pb-4' 
+          isMobileMenuOpen
+            ? 'max-h-90 opacity-100'
             : 'max-h-0 opacity-0'
         )}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-neutral-200">
@@ -120,17 +163,53 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                 href={item.href}
                 onClick={closeMobileMenu}
                 className={cn(
-                  'block px-3 py-2 rounded-md text-base font-medium transition-all duration-200',
-                  'hover:text-primary hover:bg-primary-50',
+                  'block px-4 py-4 rounded-md text-base font-medium transition-all duration-200',
+                  'hover:text-orange-700/80 hover:bg-orange-100/70',
                   'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
                   isActiveLink(item.href)
-                    ? 'text-primary bg-primary-50 border-l-4 border-primary'
+                    ? 'text-orange-700/80 bg-orange-100/70 border-l-4 border-orange-700/80'
                     : 'text-neutral-700'
                 )}
               >
                 {item.label}
               </Link>
             ))}
+
+            {/* Mobile Social Icons - Optional */}
+            {showSocialIcons && (
+              <div className="px-3 py-4 border-t border-neutral-200 mt-2">
+                <p className="text-sm font-medium text-neutral-600 mb-3">Síguenos</p>
+                <div className="flex space-x-4">
+                  <a
+                    href="https://facebook.com/silverdogtraining88"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-600 hover:text-blue-600 transition-colors duration-200"
+                    aria-label="Facebook"
+                  >
+                    <FaFacebook className="w-6 h-6" />
+                  </a>
+                  <a
+                    href="https://instagram.com/silverdogtraining88"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-600 hover:text-pink-600 transition-colors duration-200"
+                    aria-label="Instagram"
+                  >
+                    <FaInstagram className="w-6 h-6" />
+                  </a>
+                  <a
+                    href="https://tiktok.com/@silverdogtraining"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-600 hover:text-black transition-colors duration-200"
+                    aria-label="TikTok"
+                  >
+                    <FaTiktok className="w-6 h-6" />
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
