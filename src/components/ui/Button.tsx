@@ -10,6 +10,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   rightIcon?: React.ReactNode
   loading?: boolean
   fullWidth?: boolean
+  asChild?: boolean
 }
 
 const buttonVariants = {
@@ -36,26 +37,47 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     loading = false,
     fullWidth = false,
     disabled,
+    asChild = false,
     ...props 
   }, ref) => {
     const isDisabled = disabled || loading
 
+    const buttonClasses = cn(
+      // Base styles
+      'inline-flex items-center justify-center gap-2 rounded-md font-medium transition-all duration-200',
+      'focus:outline-none focus:ring-offset-white',
+      'disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
+      // Variant styles
+      buttonVariants[variant],
+      // Size styles
+      buttonSizes[size],
+      // Full width
+      fullWidth && 'w-full',
+      // Custom className
+      className
+    )
+
+    if (asChild) {
+      return (
+        <button
+          className={buttonClasses}
+          ref={ref}
+          disabled={isDisabled}
+          {...props}
+        >
+          <span className={cn(
+            'flex-1 text-center',
+            (leftIcon || rightIcon || loading) && 'flex-none'
+          )}>
+            {children}
+          </span>
+        </button>
+      )
+    }
+
     return (
       <button
-        className={cn(
-          // Base styles
-          'inline-flex items-center justify-center gap-2 rounded-md font-medium transition-all duration-200',
-          'focus:outline-none focus:ring-offset-white',
-          'disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
-          // Variant styles
-          buttonVariants[variant],
-          // Size styles
-          buttonSizes[size],
-          // Full width
-          fullWidth && 'w-full',
-          // Custom className
-          className
-        )}
+        className={buttonClasses}
         ref={ref}
         disabled={isDisabled}
         {...props}
