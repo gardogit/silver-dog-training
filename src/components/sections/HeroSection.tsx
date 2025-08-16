@@ -48,7 +48,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                 alt="Silver Dog Training Logo"
                 width={120}
                 height={120}
-                className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24"
+                className="w-18 h-18 sm:w-20 sm:h-20 lg:w-22 lg:h-22 xl:w-24 xl:h-24"
                 draggable="false"
               />
             </div>
@@ -65,11 +65,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
             </p>
 
             {/* CTA Button */}
-            <div className="mb-4 sm:mb-6">
+            <div className="mb-4 sm:mb-6 group">
               <Button
                 size="md"
                 variant="outline"
-                className="bg-white text-orange-500 hover:text-green-900 border-white hover:bg-orange-100 px-4 sm:px-6 py-6 text-sm sm:text-base font-medium select-none hover:-translate-y-0.5 group"
+                className="bg-white text-orange-500 group-hover:text-lime-900 border-white group-hover:bg-orange-100 px-4 sm:px-6 py-6 text-sm sm:text-base font-medium select-none group-hover:-translate-y-0.5 transition-transform duration-300"
                 asChild
               >
                 <a
