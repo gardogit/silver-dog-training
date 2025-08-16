@@ -69,7 +69,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
               <Button
                 size="md"
                 variant="outline"
-                className="bg-white text-orange-500 border-white hover:bg-orange-100 px-4 sm:px-6 py-6 text-sm sm:text-base font-medium select-none"
+                className="bg-white text-orange-500 hover:text-green-900 border-white hover:bg-orange-100 px-4 sm:px-6 py-6 text-sm sm:text-base font-medium select-none hover:-translate-y-0.5 group"
                 asChild
               >
                 <a
@@ -78,8 +78,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2"
                 >
-                  <span>Reserva tu clase ahora</span>
-                  <HiArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span className='group-hover:font-bold transition-transform duration-300'>Reserva tu clase ahora</span>
+                  <HiArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </Button>
             </div>
