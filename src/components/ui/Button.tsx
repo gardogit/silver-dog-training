@@ -15,9 +15,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const buttonVariants = {
-  primary: 'bg-primary text-white hover:bg-primary-600 focus:ring-primary focus:ring-2 focus:ring-offset-2',
-  secondary: 'bg-secondary text-white hover:bg-secondary-700 focus:ring-secondary focus:ring-2 focus:ring-offset-2',
-  outline: 'border border-primary text-primary bg-transparent hover:bg-primary-50 focus:ring-primary focus:ring-2 focus:ring-offset-2',
+  primary: 'bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 focus:ring-2 focus:ring-offset-2',
+  secondary: 'bg-lime-800 text-white hover:bg-lime-900 focus:ring-lime-800 focus:ring-2 focus:ring-offset-2',
+  outline: 'border-2 border-orange-600 text-orange-600 bg-transparent hover:bg-primary-50 focus:ring-primary focus:ring-2 focus:ring-offset-2',
   ghost: 'text-neutral-700 bg-transparent hover:bg-neutral-100 focus:ring-neutral-500 focus:ring-2 focus:ring-offset-2',
 }
 
@@ -47,7 +47,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       // Base styles
       'inline-flex items-center justify-center gap-2 rounded-md font-medium transition-all duration-200',
       'focus:outline-none focus:ring-offset-white',
-      'disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
+      'disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none cursor-pointer',
       // Variant styles
       buttonVariants[variant],
       // Size styles
