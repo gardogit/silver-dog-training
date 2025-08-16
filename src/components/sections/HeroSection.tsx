@@ -15,7 +15,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
   return (
     <section
       className={cn(
-        'relative h-screen flex items-end overflow-hidden -mt-16 pt-16',
+        'relative h-screen flex overflow-hidden -mt-16 pt-16',
         className
       )}
     >
@@ -28,6 +28,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           priority
           className="object-cover object-center"
           sizes="100vw"
+          draggable="false"
         />
         {/* Orange gradient overlay matching Figma design */}
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/80 via-orange-500/70 to-orange-600/80" />
@@ -48,17 +49,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                 width={120}
                 height={120}
                 className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24"
+                draggable="false"
               />
             </div>
 
             {/* Main Title - Smaller and bolder */}
-            <h1 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-black mb-3 sm:mb-4 leading-tight text-center !text-white">
-              <span className="block !text-white">EDUCA A TU PERRO</span>
-              <span className="block !text-white">FORTALECE TU VÍNCULO</span>
+            <h1 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-black mb-3 sm:mb-4 leading-tight text-center text-white select-none">
+              <span className="block">EDUCA A TU PERRO</span>
+              <span className="block">FORTALECE TU VÍNCULO</span>
             </h1>
 
             {/* Subtitle - Smaller and bolder */}
-            <p className="text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 leading-relaxed font-bold text-center max-w-xs sm:max-w-sm lg:max-w-md !text-white">
+            <p className="text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 leading-relaxed font-bold text-center max-w-xs sm:max-w-sm lg:max-w-md !text-white select-none">
               Transforma la relación con tu perro a través de métodos de adiestramiento positivos y efectivos.
             </p>
 
@@ -67,7 +69,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
               <Button
                 size="md"
                 variant="outline"
-                className="bg-white text-primary border-white hover:bg-primary-50 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-bold"
+                className="bg-white text-orange-500 border-white hover:bg-orange-100 px-4 sm:px-6 py-6 text-sm sm:text-base font-medium select-none"
                 asChild
               >
                 <a
@@ -83,7 +85,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
             </div>
 
             {/* Brand Tagline - Smaller and bolder */}
-            <p className="text-xs sm:text-sm font-bold tracking-wide text-center !text-white">
+            <p className="text-xs sm:text-sm font-bold tracking-wide text-center !text-white select-none">
               {brand.tagline}
             </p>
           </div>
@@ -97,6 +99,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                 fill
                 className="object-contain object-left-bottom"
                 priority
+                draggable="false"
               />
             </div>
           </div>
