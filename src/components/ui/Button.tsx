@@ -1,4 +1,5 @@
 import React from 'react'
+import { Slot } from '@radix-ui/react-slot'
 import { cn } from '@/lib/utils'
 import { ButtonVariant, ButtonSize } from '@/types/design-system'
 
@@ -27,18 +28,18 @@ const buttonSizes = {
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ 
-    className, 
-    variant = 'primary', 
-    size = 'md', 
-    children, 
-    leftIcon, 
-    rightIcon, 
+  ({
+    className,
+    variant = 'primary',
+    size = 'md',
+    children,
+    leftIcon,
+    rightIcon,
     loading = false,
     fullWidth = false,
     disabled,
     asChild = false,
-    ...props 
+    ...props
   }, ref) => {
     const isDisabled = disabled || loading
 
@@ -59,19 +60,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     if (asChild) {
       return (
-        <button
+        <Slot
           className={buttonClasses}
           ref={ref}
-          disabled={isDisabled}
           {...props}
         >
-          <span className={cn(
-            'flex-1 text-center',
-            (leftIcon || rightIcon || loading) && 'flex-none'
-          )}>
-            {children}
-          </span>
-        </button>
+          {children}
+        </Slot>
       )
     }
 
@@ -104,20 +99,20 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             />
           </svg>
         )}
-        
+
         {!loading && leftIcon && (
           <span className="flex-shrink-0">
             {leftIcon}
           </span>
         )}
-        
+
         <span className={cn(
           'flex-1 text-center',
           (leftIcon || rightIcon || loading) && 'flex-none'
         )}>
           {children}
         </span>
-        
+
         {!loading && rightIcon && (
           <span className="flex-shrink-0">
             {rightIcon}
