@@ -17,8 +17,8 @@ export const AboutUsSection = () => {
                 imageAlt="Entrenador Yonathan Pérez con un perro"
                 imagePosition="left"
             >
-                <div className="bg-neutral-900 text-neutral-200 p-8 lg:p-16 w-full min-h-screen -mt-16 flex flex-col justify-center">
-                    <p className="text-orange-500 font-semibold tracking-wide mb-3 pt-16">
+                <div className="bg-neutral-900 text-neutral-200 p-8 lg:p-16 w-full md:min-h-screen h-full md:-mt-16 mt-0 flex flex-col justify-center">
+                    <p className="text-orange-500 font-semibold tracking-wide mb-3 md:pt-16 pt-0">
                         Yonathan Pérez
                     </p>
                     <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">
@@ -36,11 +36,11 @@ export const AboutUsSection = () => {
                 imageAlt="Perro en sesión de entrenamiento K9"
                 imagePosition="right"
             >
-                <div className="text-neutral-800 p-8 lg:p-16 w-full min-h-screen -mt-16">
-                    <p className="text-orange-500 font-semibold tracking-wide pt-16 mb-3">
+                <div className="text-neutral-800 p-8 lg:p-16 w-full md:min-h-screen h-full md:-mt-16 mt-0">
+                    <p className="text-orange-500 font-semibold tracking-wide mb-3 md:pt-16 pt-0">
                         Mi historia
                     </p>
-                    <div className="md:columns-2 md:gap-10 text-neutral-600 leading-relaxed">
+                    <div className="lg:columns-2 lg:gap-10 text-neutral-600 leading-relaxed">
                         <p className="mb-4 break-inside-avoid">
                             Desde que era niño, los animales han sido mi pasión. Mi fascinación por los perros, en particular, me llevó a explorar el mundo del adiestramiento canino. Tuve la oportunidad de formarme con Gian Carlo Sabino, un reconocido entrenador de perros de detección y protección, quien se convirtió en mi mentor y me inspiró a seguir este camino.
                         </p>
@@ -57,8 +57,8 @@ export const AboutUsSection = () => {
                 imageAlt="Un perro feliz y obediente mirando a su dueño"
                 imagePosition="left"
             >
-                <div className="text-neutral-800 p-8 lg:p-16 w-full min-h-screen -mt-16 border-b border-neutral-200">
-                    <div className="md:columns-2 md:gap-10 text-neutral-600 leading-relaxed pt-16">
+                <div className="text-neutral-800 p-8 lg:p-16 w-full md:min-h-screen h-full md:-mt-16 mt-0 sm:border-b sm:border-neutral-200">
+                    <div className="lg:columns-2 lg:gap-10 text-neutral-600 leading-relaxed md:pt-16 pt-0">
                         <p className="mb-4 break-inside-avoid">
                             Nuestra <span className="text-orange-500 font-semibold">misión</span> es proporcionar una educación de alta calidad en adiestramiento canino, fomentando el bienestar y la relación armoniosa entre perros y sus guías. Queremos ser la escuela líder en adiestramiento canino en la región, reconocida por nuestro compromiso con la excelencia, la innovación y la creación de comunidades de guías de perros responsables y felices.
                         </p>
@@ -70,7 +70,7 @@ export const AboutUsSection = () => {
             </ContentRow>
 
             {/* Call to Action */}
-            <div className="py-12 max-w-7xl px-4 mx-auto">
+            <div className="pb-12 sm:py-12 max-w-7xl px-4 mx-auto">
                 <CallToActionBanner
                     title="Te invitamos a unirte a nuestra comunidad de amantes de los perros"
                     description="y a descubrir cómo podemos ayudarte a transformar la relación con tu fiel compañero. ¡Juntos, podemos educar guías, adiestrar perros y crear recuerdos inolvidables!"

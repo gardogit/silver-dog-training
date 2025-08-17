@@ -38,7 +38,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
             </div>
 
             {/* --- Columna del Contenido (inyectado a través de children) --- */}
-            <div className="md:w-1/2 w-full flex items-center">
+            <div className="md:w-1/2 w-full flex items-center h-full">
                 {children}
             </div>
         </div>
