@@ -1,6 +1,6 @@
-import { HeroSection } from "@/components/sections/HeroSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { GoogleReviewsSection } from '@/components/sections/GoogleReviewsSection';
+import { HeroSection } from "@/components/sections/home/HeroSection";
+import { ServicesSection } from "@/components/sections/home/ServicesSection";
+import { GoogleReviewsSection } from '@/components/sections/home/GoogleReviewsSection';
 import { FaqSection } from '@/components/sections/FaqSection';
 
 export default function Home() {

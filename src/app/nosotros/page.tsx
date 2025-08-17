@@ -1,8 +1,10 @@
+import { AboutUsSection } from "@/components/sections/nosotros/AboutUsSection";
+
 export default function NosotrosPage() {
   return (
     <div>
-      <h1>Nosotros</h1>
-      <p>About Silver Dog Training page</p>
+      <AboutUsSection />
+
     </div>
   )
 }
