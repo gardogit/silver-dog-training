@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
             </h1>
 
             {/* Subtitle - Smaller and bolder */}
-            <p className="text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 leading-relaxed font-bold text-center max-w-xs sm:max-w-sm lg:max-w-md !text-white select-none">
+            <p className="text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 leading-relaxed font-medium text-center max-w-xs sm:max-w-sm lg:max-w-md !text-white select-none">
               Transforma la relación con tu perro a través de métodos de adiestramiento positivos y efectivos.
             </p>
 
@@ -69,7 +69,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
               <Button
                 size="md"
                 variant="outline"
-                className="bg-white text-orange-500 group-hover:text-lime-900 border-white group-hover:bg-orange-100 px-4 sm:px-6 py-6 text-sm sm:text-base font-medium select-none group-hover:-translate-y-0.5 transition-transform duration-300"
+                className="bg-white text-orange-500 group-hover:text-lime-900 border-white px-4 sm:px-6 py-6 text-sm sm:text-base font-medium select-none group-hover:-translate-y-0.5 transition-transform duration-300"
                 asChild
               >
                 <a
@@ -85,7 +85,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
             </div>
 
             {/* Brand Tagline - Smaller and bolder */}
-            <p className="text-xs sm:text-sm font-bold tracking-wide text-center !text-white select-none">
+            <p className="text-xs sm:text-sm font-medium tracking-wide text-center !text-white select-none">
               {brand.tagline}
             </p>
           </div>
