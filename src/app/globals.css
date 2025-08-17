@@ -33,6 +33,7 @@
   /* Background and Foreground */
   --background: #ffffff;
   --foreground: #171717;
+  --color-stone: oklch(97% 0.001 106.424);
 
   /* Spacing System */
   --spacing-xs: 0.5rem;
@@ -67,7 +68,7 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: var(--color-stone);
   color: var(--foreground);
   font-family: 'Inter', system-ui, sans-serif;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
@@ -76,11 +77,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Focus States */
-*:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
 
 /* Utility Classes */
 .text-balance {
