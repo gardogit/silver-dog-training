@@ -58,7 +58,7 @@ export const CallToActionBanner: React.FC<CallToActionBannerProps> = ({
   return (
     <div
       className={cn(
-        'p-8 rounded-md bg-neutral-900 border-3 border-neutral-700',
+        'p-8 rounded-lg bg-neutral-900 border-3 border-neutral-700',
         className
       )}
     >

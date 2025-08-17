@@ -147,7 +147,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ className }) =
 
     return (
         <section
-            className={`pt-16 px-4 sm:px-6 lg:px-8 bg-neutral-50 ${className || ''}`}
+            className={`pt-16 px-4 sm:px-6 lg:px-8 ${className || ''}`}
             data-testid="services-section"
         >
             <div className="max-w-7xl mx-auto">
