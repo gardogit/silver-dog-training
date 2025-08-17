@@ -1,5 +1,7 @@
 // Design System Configuration for Silver Dog Training
 
+import { url } from "inspector"
+
 export const colors = {
   primary: {
     DEFAULT: '#cb6622',
@@ -168,4 +170,8 @@ export const brand = {
       tiktok: '@silverdogtraining',
     },
   },
+  desarrolladoPor: {
+    name: 'Hydrogn',
+    url: 'https://hydrogn.vercel.app/',
+  }
 } as const
