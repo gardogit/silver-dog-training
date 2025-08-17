@@ -43,7 +43,7 @@ const getInputClasses = (hasError: boolean, size: InputSize) => {
     // Error/success states
     hasError
       ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-      : 'border-neutral-300 focus:border-primary focus:ring-primary'
+      : 'border-neutral-300 focus:border-orange-500 focus:ring-orange-500'
   )
 }
 
@@ -59,7 +59,7 @@ const getTextareaClasses = (hasError: boolean, size: InputSize) => {
     // Error/success states
     hasError
       ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-      : 'border-neutral-300 focus:border-primary focus:ring-primary'
+      : 'border-neutral-300 focus:border-orange-500 focus:ring-orange-500'
   )
 }
 
