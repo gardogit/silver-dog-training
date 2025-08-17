@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { SiGoogle } from 'react-icons/si';
-import Image from 'next/image';
+//import Image from 'next/image';
 
 export interface ReviewData {
     id: string;
@@ -31,7 +31,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
     return (
-        <div className="bg-white p-6 rounded-lg border-3 border-neutral-200 h-full flex flex-col">
+        <div className="bg-white p-6 rounded-lg border-3 border-neutral-200 h-full flex flex-col select-none">
             <div className="flex items-start mb-4">
                 {review.authorPhotoUrl ? (
                     // <Image

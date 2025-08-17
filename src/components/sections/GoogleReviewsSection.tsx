@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 import { ReviewCard, ReviewData } from '@/components/ui/ReviewCard'
 import { Button } from '@/components/ui/Button'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
@@ -58,9 +59,18 @@ interface GoogleReviewsSectionProps {
 export const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({ className }) => {
     //const googleReviewsUrl = 'https://www.google.com/search?q=tu+negocio#lrd=0x0:0x0,1';
 
-    // 1. Inicializamos el hook de Embla Carousel.
-    // Opciones: loop para que sea infinito.
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
+    // 1. Inicializamos el carrusel con el plugin de Autoplay
+    // El segundo argumento del hook es un array de plugins.
+    const [emblaRef, emblaApi] = useEmblaCarousel(
+        { loop: true, align: 'start' },
+        [
+            Autoplay({
+                delay: 3000,
+                stopOnInteraction: false, // El autoplay no se detiene si interactúas con los botones
+                stopOnMouseEnter: true, // El autoplay se pausa cuando el cursor está sobre el carrusel
+            })
+        ]
+    );
 
     // 2. Estados para saber si los botones de prev/next deben estar activos
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
@@ -79,7 +89,7 @@ export const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({ clas
         };
         emblaApi.on('select', onSelect);
         emblaApi.on('reInit', onSelect);
-        onSelect(); // Ejecutar al inicio
+        onSelect();
         return () => {
             emblaApi.off('select', onSelect);
         };
