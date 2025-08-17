@@ -1,4 +1,8 @@
+'use client'
+
+import { CallToActionBanner } from '@/components/ui/CallToActionBanner';
 import { ContentRow } from '@/components/ui/ContentRow';
+import Link from 'next/link';
 
 /**
  * Componente que construye la sección "Nosotros" completa,
@@ -6,7 +10,7 @@ import { ContentRow } from '@/components/ui/ContentRow';
  */
 export const AboutUsSection = () => {
     return (
-        <section className="bg-white">
+        <section>
             {/* --- Fila 1: Presentación --- */}
             <ContentRow
                 imageUrl="/images/yonathan-y-pastor-aleman.webp"
@@ -32,8 +36,11 @@ export const AboutUsSection = () => {
                 imageAlt="Perro en sesión de entrenamiento K9"
                 imagePosition="right"
             >
-                <div className="bg-white text-neutral-800 p-8 lg:p-16 w-full min-h-screen -mt-16">
-                    <div className="md:columns-2 md:gap-10 text-neutral-600 leading-relaxed pt-16">
+                <div className="text-neutral-800 p-8 lg:p-16 w-full min-h-screen -mt-16">
+                    <p className="text-orange-500 font-semibold tracking-wide pt-16 mb-3">
+                        Mi historia
+                    </p>
+                    <div className="md:columns-2 md:gap-10 text-neutral-600 leading-relaxed">
                         <p className="mb-4 break-inside-avoid">
                             Desde que era niño, los animales han sido mi pasión. Mi fascinación por los perros, en particular, me llevó a explorar el mundo del adiestramiento canino. Tuve la oportunidad de formarme con Gian Carlo Sabino, un reconocido entrenador de perros de detección y protección, quien se convirtió en mi mentor y me inspiró a seguir este camino.
                         </p>
@@ -50,10 +57,10 @@ export const AboutUsSection = () => {
                 imageAlt="Un perro feliz y obediente mirando a su dueño"
                 imagePosition="left"
             >
-                <div className="bg-neutral-50 text-neutral-800 p-8 lg:p-16 w-full min-h-screen -mt-16">
+                <div className="text-neutral-800 p-8 lg:p-16 w-full min-h-screen -mt-16 border-b border-neutral-200">
                     <div className="md:columns-2 md:gap-10 text-neutral-600 leading-relaxed pt-16">
                         <p className="mb-4 break-inside-avoid">
-                            Nuestra misión es proporcionar una educación de alta calidad en adiestramiento canino, fomentando el bienestar y la relación armoniosa entre perros y sus guías. Queremos ser la escuela líder en adiestramiento canino en la región, reconocida por nuestro compromiso con la excelencia, la innovación y la creación de comunidades de guías de perros responsables y felices.
+                            Nuestra <span className="text-orange-500 font-semibold">misión</span> es proporcionar una educación de alta calidad en adiestramiento canino, fomentando el bienestar y la relación armoniosa entre perros y sus guías. Queremos ser la escuela líder en adiestramiento canino en la región, reconocida por nuestro compromiso con la excelencia, la innovación y la creación de comunidades de guías de perros responsables y felices.
                         </p>
                         <p className="mb-4 break-inside-avoid">
                             En Silver Dog Training, creemos que cada perro es único y merece un enfoque único. Por eso, ofrecemos programas de entrenamiento personalizados que se adaptan a las necesidades específicas de cada perro y a los objetivos de sus guías. Ya sea que estés buscando mejorar la obediencia de tu perro, corregir conductas no deseadas o simplemente fortalecer el vínculo entre ambos, en Silver Dog Training encontrarás el apoyo y la guía que necesitas.
@@ -61,6 +68,25 @@ export const AboutUsSection = () => {
                     </div>
                 </div>
             </ContentRow>
+
+            {/* Call to Action */}
+            <div className="py-12 max-w-7xl px-4 mx-auto">
+                <CallToActionBanner
+                    title="Te invitamos a unirte a nuestra comunidad de amantes de los perros"
+                    description="y a descubrir cómo podemos ayudarte a transformar la relación con tu fiel compañero. ¡Juntos, podemos educar guías, adiestrar perros y crear recuerdos inolvidables!"
+                    buttonText="Enviar"
+                    onSubmit={(email) => console.log('Email recibido:', email)}
+                    privacyPolicyText={
+                        <>
+                            Respetamos tu privacidad. Lee nuestra{' '}
+                            <Link href="/politica-privacidad" className="underline hover:text-orange-500">
+                                política de privacidad
+                            </Link>
+                            .
+                        </>
+                    }
+                />
+            </div>
         </section>
     );
 };
