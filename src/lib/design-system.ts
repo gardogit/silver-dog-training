@@ -1,7 +1,5 @@
 // Design System Configuration for Silver Dog Training
 
-import { url } from "inspector"
-
 export const colors = {
   primary: {
     DEFAULT: '#cb6622',
