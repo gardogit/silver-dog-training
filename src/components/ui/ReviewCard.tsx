@@ -34,13 +34,16 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
         <div className="bg-white p-6 rounded-lg border-3 border-neutral-200 h-full flex flex-col">
             <div className="flex items-start mb-4">
                 {review.authorPhotoUrl ? (
-                    <Image
-                        src={review.authorPhotoUrl}
-                        alt={review.authorName}
-                        width={48}
-                        height={48}
-                        className="w-12 h-12 rounded-full mr-4 object-cover"
-                    />
+                    // <Image
+                    //     src={review.authorPhotoUrl}
+                    //     alt={review.authorName}
+                    //     width={48}
+                    //     height={48}
+                    //     className="w-12 h-12 rounded-full mr-4 object-cover"
+                    // /> Uso temporal ----------------
+                    <div className="w-12 h-12 rounded-full mr-4 bg-orange-100 text-orange-500 flex items-center justify-center text-xl font-bold">
+                        {review.authorName.charAt(0)}
+                    </div>
                 ) : (
                     <div className="w-12 h-12 rounded-full mr-4 bg-orange-100 text-orange-500 flex items-center justify-center text-xl font-bold">
                         {review.authorName.charAt(0)}
