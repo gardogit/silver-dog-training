@@ -1,17 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { brand } from '@/lib/design-system'
-import { 
-  HiMail, 
+import {
+  HiMail,
   HiLocationMarker,
-  HiExternalLink 
+  HiCalendar
 } from 'react-icons/hi'
-import { 
-  FaFacebook, 
-  FaInstagram, 
-  FaTiktok, 
-  FaWhatsapp 
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTiktok,
+  FaWhatsapp
 } from 'react-icons/fa'
 
 interface FooterProps {
@@ -59,21 +60,35 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SD</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">{brand.name}</h3>
-                <p className="text-sm text-neutral-400">Entrenamiento Canino Profesional</p>
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <Link
+                  href="/"
+                  className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200"
+                >
+                  <Image
+                    src="/icon-192.png"
+                    alt="Silver Dog Training"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10"
+                    priority
+                    draggable="false"
+                  />
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{brand.name}</h3>
+                    <p className="text-sm text-neutral-400">Entrenamiento Canino Profesional</p>
+                  </div>
+                </Link>
               </div>
             </div>
-            
-            <p className="text-neutral-300 mb-4 max-w-md">
+
+            <p className="text-xs text-neutral-300 mb-4 max-w-md">
               {brand.tagline}
             </p>
-            
+
             <p className="text-sm text-neutral-400 mb-6">
-              Especializados en el método NePoPo® y entrenamiento de perros K9 de detección y protección. 
+              Especializados en el método NePoPo® y entrenamiento de perros K9 de detección y protección.
               Más de 8 años de experiencia creando vínculos duraderos entre guías y sus compañeros caninos.
             </p>
 
@@ -89,7 +104,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                     rel="noopener noreferrer"
                     className={cn(
                       'flex items-center justify-center w-10 h-10 rounded-full',
-                      'bg-neutral-800 hover:bg-primary transition-colors duration-200',
+                      'bg-neutral-800 hover:bg-orange-500 transition-colors duration-200',
                       'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-neutral-900'
                     )}
                     aria-label={`Síguenos en ${social.name} (${social.label})`}
@@ -110,8 +125,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                   <Link
                     href={link.href}
                     className={cn(
-                      'text-neutral-300 hover:text-primary transition-colors duration-200',
-                      'focus:outline-none focus:text-primary'
+                      'text-neutral-300 hover:text-orange-500 transition-colors duration-200',
+                      'focus:outline-none focus:text-orange-500'
                     )}
                   >
                     {link.label}
@@ -124,55 +139,53 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           {/* Contact Information */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Contacto</h4>
-            <div className="space-y-3">
+            <div className="space-y-4">
               {/* WhatsApp */}
               <a
                 href={`https://wa.me/${brand.contact.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  'flex items-center space-x-3 text-neutral-300 hover:text-primary',
+                  'flex items-center space-x-3 text-neutral-300 hover:text-orange-500',
                   'transition-colors duration-200 group',
-                  'focus:outline-none focus:text-primary'
+                  'focus:outline-none focus:text-orange-500'
                 )}
               >
                 <FaWhatsapp className="w-5 h-5 flex-shrink-0" />
-                <div>
-                  <span className="block text-sm">WhatsApp</span>
-                  <span className="text-xs text-neutral-400 group-hover:text-primary-light">
-                    +{brand.contact.whatsapp}
-                  </span>
-                </div>
-                <HiExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <span className="text-xs text-neutral-400 group-hover:text-orange-500">
+                  +{brand.contact.whatsapp}
+                </span>
               </a>
 
               {/* Email */}
               <a
                 href={`mailto:${brand.contact.email}`}
                 className={cn(
-                  'flex items-center space-x-3 text-neutral-300 hover:text-primary',
+                  'flex items-center space-x-3 text-neutral-300 hover:text-orange-500',
                   'transition-colors duration-200 group',
-                  'focus:outline-none focus:text-primary'
+                  'focus:outline-none focus:text-orange-500'
                 )}
               >
                 <HiMail className="w-5 h-5 flex-shrink-0" />
-                <div>
-                  <span className="block text-sm">Email</span>
-                  <span className="text-xs text-neutral-400 group-hover:text-primary-light break-all">
-                    {brand.contact.email}
-                  </span>
-                </div>
+                <span className="text-xs text-neutral-400 group-hover:text-orange-500-light break-all">
+                  {brand.contact.email}
+                </span>
               </a>
 
               {/* Location */}
               <div className="flex items-center space-x-3 text-neutral-300">
                 <HiLocationMarker className="w-5 h-5 flex-shrink-0" />
-                <div>
-                  <span className="block text-sm">Ubicación</span>
-                  <span className="text-xs text-neutral-400">
-                    Venezuela
-                  </span>
-                </div>
+                <span className="text-xs text-neutral-400">
+                  Venezuela
+                </span>
+              </div>
+
+              {/* Horarios */}
+              <div className="flex items-center space-x-3 text-neutral-300">
+                <HiCalendar className="w-5 h-5 flex-shrink-0" />
+                <span className="text-xs text-neutral-400">
+                  Lunes a Sábados: 8am - 6pm
+                </span>
               </div>
             </div>
           </div>
@@ -180,15 +193,23 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
 
         {/* Bottom Section */}
         <div className="border-t border-neutral-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col items-center space-y-2">
             <div className="text-sm text-neutral-400">
-              © {currentYear} {brand.name}. Todos los derechos reservados.
+              © {currentYear} {brand.name}. Todos los derechos reservados.&nbsp;
             </div>
-            
-            <div className="flex items-center space-x-6 text-sm text-neutral-400">
-              <span>Método NePoPo® Certificado</span>
-              <span>•</span>
-              <span>8+ Años de Experiencia</span>
+
+            <div className="text-sm text-neutral-400">
+              <span>
+                Página web desarrollada por&nbsp;
+                <Link 
+                href={brand.desarrolladoPor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-500 hover:underline"
+                >
+                  Hydrogn
+                </Link>
+              </span>
             </div>
           </div>
         </div>
