@@ -6,7 +6,6 @@ import { CardSize } from '@/types/design-system'
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: CardSize
   hover?: boolean
-  shadow?: 'soft' | 'medium' | 'strong'
   children: React.ReactNode
 }
 
@@ -46,18 +45,11 @@ const cardSizes = {
   lg: 'p-8',
 }
 
-const cardShadows = {
-  soft: 'shadow-soft',
-  medium: 'shadow-medium',
-  strong: 'shadow-strong',
-}
-
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ 
     className, 
     size = 'md',
     hover = false,
-    shadow = 'soft',
     children,
     ...props 
   }, ref) => {
@@ -66,9 +58,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         ref={ref}
         className={cn(
           // Base styles
-          'bg-white rounded-lg border border-neutral-200 overflow-hidden',
-          // Shadow
-          cardShadows[shadow],
+          'bg-white rounded-lg border-3 border-neutral-200 overflow-hidden',
           // Padding
           cardSizes[size],
           // Hover effects
@@ -115,6 +105,7 @@ const CardImage: React.FC<CardImageProps> = ({
         width={width}
         height={height}
         priority={priority}
+        draggable="false"
         className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
         {...props}
       />
