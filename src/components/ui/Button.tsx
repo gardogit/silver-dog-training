@@ -15,8 +15,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const buttonVariants = {
-  primary: 'bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 focus:ring-2 focus:ring-offset-2',
-  secondary: 'bg-orange-100 text-orange-600 hover:bg-orange-200 focus:ring-orange-500 focus:ring-2 focus:ring-offset-2',
+  primary: 'bg-orange-500 border-2 border-orange-500 text-white hover:bg-orange-600 hover:border-orange-600 focus:ring-orange-500 focus:ring-2 focus:ring-offset-2',
+  secondary: 'bg-orange-100 border-2 border-orange-100 text-orange-600 hover:bg-orange-200 hover:border-orange-200 focus:ring-orange-500 focus:ring-2 focus:ring-offset-2',
   outline: 'border-2 border-orange-600 text-orange-600 bg-transparent hover:bg-primary-50 focus:ring-primary focus:ring-2 focus:ring-offset-2',
   ghost: 'text-neutral-700 bg-transparent hover:bg-neutral-100 focus:ring-neutral-500 focus:ring-2 focus:ring-offset-2',
 }
