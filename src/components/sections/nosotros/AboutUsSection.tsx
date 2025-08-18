@@ -18,7 +18,7 @@ export const AboutUsSection = () => {
                 imagePosition="left"
             >
                 <div className="bg-neutral-900 text-neutral-200 p-8 lg:p-16 w-full md:min-h-screen h-full md:-mt-16 mt-0 flex flex-col justify-center">
-                    <p className="text-orange-500 font-semibold tracking-wide mb-3 md:pt-16 pt-0">
+                    <p className="text-orange-400 font-semibold tracking-wide mb-3 md:pt-16 pt-0">
                         Yonathan Pérez
                     </p>
                     <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">

@@ -57,7 +57,7 @@ export const CoursesSection: React.FC = () => {
             <div className="bg-neutral-900 pt-12 pb-8 px-4 text-center space-y-4">
                 <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Nuestros Cursos</h1>
                 <p className="mt-4 text-sm italic text-neutral-400 max-w-lg mx-auto">
-                    <span className="text-orange-400">Selecciona aquí</span> el curso que mejor se ajuste a tus necesidades:
+                    <span className="text-orange-300">Selecciona aquí</span> el curso que mejor se ajuste a tus necesidades:
                 </p>
                 <div className="flex justify-center">
                     {/* --- 1. Select para pantallas pequeñas (móvil) --- */}
