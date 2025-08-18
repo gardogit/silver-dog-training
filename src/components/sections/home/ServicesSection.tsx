@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation';
 import { Card, CardHeader, CardImage, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { FaUser, FaUsers, FaShieldAlt, FaArrowRight } from 'react-icons/fa'
@@ -139,10 +140,10 @@ interface ServicesSectionProps {
 }
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ className }) => {
+    const router = useRouter();
     const handleLearnMore = (serviceType: string) => {
-        // Navigate to contact page with service pre-selected
-        const contactUrl = `/contacto?service=${serviceType}`
-        window.location.assign(contactUrl)
+        // Navegamos a la página de Cursos con el parámetro 'tab'
+        router.push(`/cursos?tab=${serviceType}`);
     }
 
     return (
