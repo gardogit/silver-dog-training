@@ -48,6 +48,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
     { href: '/nosotros', label: 'Nosotros' },
     { href: '/cursos', label: 'Cursos' },
     { href: '/contacto', label: 'Contacto' },
+    { href: '/politica-privacidad', label: 'Política de Privacidad' },
   ]
 
   return (
