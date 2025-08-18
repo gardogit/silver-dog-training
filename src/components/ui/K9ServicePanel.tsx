@@ -5,9 +5,10 @@ import { K9Data } from '@/data/courses.data';
 
 interface K9ServicePanelProps {
     content: K9Data;
+    onRequest: (service: { title: string }) => void;
 }
 
-export const K9ServicePanel: React.FC<K9ServicePanelProps> = ({ content }) => {
+export const K9ServicePanel: React.FC<K9ServicePanelProps> = ({ content, onRequest }) => {
     return (
         <div className="bg-neutral-50 border-3 border-neutral-200 rounded-lg p-8 lg:p-12 max-w-3xl mx-auto select-none">
             <h3 className="text-3xl font-bold text-neutral-900 mb-4">{content.title}</h3>
@@ -31,7 +32,7 @@ export const K9ServicePanel: React.FC<K9ServicePanelProps> = ({ content }) => {
             </div>
             
             <div className="mt-10 flex justify-center">
-                <Button variant="primary" size="lg" className="hover:border-orange-700">
+                <Button variant="primary" size="lg" className="hover:border-orange-700" onClick={() => onRequest({ title: content.title })}>
                     Solicitar Consulta
                 </Button>
             </div>

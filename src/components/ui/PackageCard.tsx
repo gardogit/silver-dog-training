@@ -1,14 +1,15 @@
 import React from 'react';
-import { Button } from '@/components/ui/Button'; 
+import { Button } from '@/components/ui/Button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import { FaCheck } from 'react-icons/fa';
 import { Package } from '@/data/courses.data';
 
 interface PackageCardProps {
     pkg: Package;
+    onRequest: (pkg: Package) => void;
 }
 
-export const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
+export const PackageCard: React.FC<PackageCardProps> = ({ pkg, onRequest }) => {
     return (
         <Card className="h-full flex flex-col px-6 pt-8 pb-6 bg-white ring-2 ring-neutral-200/0 hover:ring-orange-400 transition-colors duration-300 hover:border-orange-400 select-none group">
             <CardHeader className="p-0 mb-4">
@@ -26,7 +27,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
                 </ul>
             </CardContent>
             <div className="pt-6 mt-auto">
-                <Button variant="secondary" size="lg" fullWidth className="group-hover:bg-orange-200 group-hover:border-orange-200 hover:bg-orange-200 hover:border-orange-400 focus:ring-offset-0 focus:ring-0">
+                <Button variant="secondary" size="lg" fullWidth onClick={() => onRequest(pkg)} className="group-hover:bg-orange-200 group-hover:border-orange-200 hover:bg-orange-200 hover:border-orange-400 focus:ring-offset-0 focus:ring-0">
                     Solicitar Paquete
                 </Button>
             </div>
