@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { NameSchema, EmailSchema, PhoneSchema } from './common'
 
 // Regex patterns for validation (imported from common for consistency)
 // const phoneRegex = /^(\+?58)?[-.\s]?0?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$/
@@ -182,8 +183,18 @@ export const CourseInquirySchema = z.object({
     }),
 })
 
+// Schema específico para el formulario de contacto simple
+export const SimpleContactSchema = z.object({
+  name: NameSchema,
+  email: EmailSchema,
+  phone: PhoneSchema,
+  subject: z.string().min(1, "Debes seleccionar un asunto"),
+  message: z.string().min(10, "Mensaje debe tener al menos 10 caracteres"),
+});
+
 // Type exports
 export type ContactFormData = z.infer<typeof ContactFormSchema>
+export type SimpleContactData = z.infer<typeof SimpleContactSchema>;
 export type QuickContactData = z.infer<typeof QuickContactSchema>
 export type NewsletterData = z.infer<typeof NewsletterSchema>
 export type CourseInquiryData = z.infer<typeof CourseInquirySchema>
