@@ -64,6 +64,8 @@ export const CoursesSection: React.FC = () => {
                     {/* `block sm:hidden` lo muestra solo en móvil */}
                     <div className="block sm:hidden w-full max-w-xs mx-auto">
                         <CustomSelect
+                            variant="dark"
+                            ariaLabel="Seleccionar tipo de curso"
                             value={activeTab}
                             onValueChange={(value) => setActiveTab(value as TabKey)}
                         >
