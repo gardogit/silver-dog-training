@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button'
 import { FaUser, FaUsers, FaShieldAlt, FaArrowRight } from 'react-icons/fa'
 import Link from 'next/link'
 import { CallToActionBanner } from '@/components/ui/CallToActionBanner'
+import { OtherServicesCarousel } from '@/components/ui/OtherServicesCarousel'
 
 interface ServiceCardData {
     id: string
@@ -173,6 +174,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ className }) =
                         />
                     ))}
                 </div>
+
+                {/* otros servicios */}
+                <OtherServicesCarousel />
 
                 {/* Call to Action */}
                 <div className="pt-12">
