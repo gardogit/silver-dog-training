@@ -69,7 +69,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isOpen, onToggle, i
         <div className={containerClasses}>
             <button
                 onClick={onToggle} // Se llama a la función del padre.
-                className="w-full flex justify-between items-center text-left gap-4"
+                className="w-full flex justify-between items-center text-left gap-4 cursor-pointer"
                 aria-expanded={isOpen} // El estado "isOpen" ahora viene de las props.
             >
                 <h3 className="text-lg font-medium text-neutral-800 group-hover:text-orange-500 transition-colors duration-300">
