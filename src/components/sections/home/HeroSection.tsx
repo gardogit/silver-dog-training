@@ -48,19 +48,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                 alt="Silver Dog Training Logo"
                 width={120}
                 height={120}
-                className="w-18 h-18 sm:w-20 sm:h-20 lg:w-22 lg:h-22 xl:w-24 xl:h-24"
+                className="w-32 h-32"
                 draggable="false"
               />
             </div>
 
             {/* Main Title - Smaller and bolder */}
-            <h1 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-black mb-3 sm:mb-4 leading-tight text-center text-white select-none">
+            <h1 className="text-3xl sm:text-4xl font-black mb-3 sm:mb-4 leading-tight text-center text-white select-none">
               <span className="block">EDUCA A TU PERRO</span>
               <span className="block">FORTALECE TU VÍNCULO</span>
             </h1>
 
             {/* Subtitle - Smaller and bolder */}
-            <p className="text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 leading-relaxed font-medium text-center max-w-xs sm:max-w-sm lg:max-w-md !text-white select-none">
+            <p className="mb-4 sm:mb-6 leading-relaxed font-medium text-center max-w-xs sm:max-w-sm lg:max-w-md !text-white select-none">
               Transforma la relación con tu perro a través de métodos de adiestramiento positivos y efectivos.
             </p>
 
