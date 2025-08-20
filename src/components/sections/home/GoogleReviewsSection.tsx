@@ -13,7 +13,7 @@ const reviewsData: ReviewData[] = [
         id: '1',
         authorName: 'Ana García',
         reviewText: 'El entrenamiento personalizado ha sido un antes y un después para mi perro. El equipo es increíblemente profesional y paciente. ¡Lo recomiendo totalmente!',
-        rating: 4,
+        rating: 5,
         relativeTime: 'hace 2 semanas',
         authorPhotoUrl: 'https://randomuser.me/api/portraits/women/44.jpg'
     },
@@ -21,7 +21,7 @@ const reviewsData: ReviewData[] = [
         id: '2',
         authorName: 'Carlos Rodríguez',
         reviewText: 'Apunté a mi cachorro a las clases grupales y ha mejorado muchísimo en su socialización. El ambiente es controlado y muy positivo. Gran trabajo.',
-        rating: 3,
+        rating: 5,
         relativeTime: 'hace un mes',
         authorPhotoUrl: 'https://randomuser.me/api/portraits/men/32.jpg'
     },
@@ -29,7 +29,7 @@ const reviewsData: ReviewData[] = [
         id: '3',
         authorName: 'Lucía Fernández',
         reviewText: 'El entrenamiento K9 es de otro nivel. La atención al detalle y la profesionalidad son impresionantes. Mi perro ha desarrollado unas habilidades increíbles.',
-        rating: 4,
+        rating: 5,
         relativeTime: 'hace 3 meses',
         authorPhotoUrl: 'https://randomuser.me/api/portraits/women/33.jpg'
     },
@@ -37,7 +37,7 @@ const reviewsData: ReviewData[] = [
         id: '4',
         authorName: 'David Martínez',
         reviewText: 'Servicio excepcional y resultados visibles en poco tiempo. El método que utilizan funciona de maravilla y el trato es inmejorable.',
-        rating: 2,
+        rating: 5,
         relativeTime: 'hace 4 meses',
         authorPhotoUrl: 'https://randomuser.me/api/portraits/men/41.jpg'
     },
@@ -45,7 +45,7 @@ const reviewsData: ReviewData[] = [
         id: '5',
         authorName: 'Sofía Gómez',
         reviewText: 'Estamos encantados con el progreso de nuestro perro. Las sesiones son dinámicas y muy bien estructuradas. ¡100% recomendable!',
-        rating: 1,
+        rating: 5,
         relativeTime: 'hace 5 meses',
         authorPhotoUrl: 'https://randomuser.me/api/portraits/women/50.jpg'
     }
