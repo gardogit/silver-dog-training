@@ -79,6 +79,7 @@ export const ServiceRequestModal: React.FC<ServiceRequestModalProps> = ({ isOpen
                                     type="email"
                                     placeholder="tu@correo.com"
                                     required
+                                    className="text-neutral-700"
                                 />
                                 <input type="hidden" name="serviceName" value={serviceName} />
                                 <SubmitButton />
