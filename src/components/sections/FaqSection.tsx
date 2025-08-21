@@ -9,7 +9,7 @@ interface FaqItemData {
     answer: string
 }
 
-const faqData: FaqItemData[] = [
+export const faqData: FaqItemData[] = [
     {
         question: '¿Qué tipo de adiestramiento canino ofrecen en Silver Dog Training?',
         answer: 'En Silver Dog Training nos especializamos en adiestramiento canino positivo y efectivo. Ofrecemos entrenamiento personalizado, enfocado en las necesidades específicas de tu perro (educación, modificación de conductas), y clases grupales para fomentar la socialización y obediencia en un entorno controlado.'

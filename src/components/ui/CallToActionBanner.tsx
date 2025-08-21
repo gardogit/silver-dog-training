@@ -56,16 +56,17 @@ export const CallToActionBanner: React.FC<CallToActionBannerProps> = ({
   }
 
   return (
-    <div
+    <section
       className={cn(
         'p-8 rounded-lg bg-neutral-900 border-3 border-neutral-700',
         className
       )}
+      aria-labelledby="cta-banner-title"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Sección de Texto */}
         <div className="text-center lg:text-left">
-          <h2 className="text-3xl font-bold text-neutral-100 mb-2">{title}</h2>
+          <h2 className="text-3xl font-bold text-neutral-100 mb-2" id="cta-banner-title">{title}</h2>
           <p className="text-neutral-400 leading-relaxed">{description}</p>
         </div>
 
@@ -105,6 +106,6 @@ export const CallToActionBanner: React.FC<CallToActionBannerProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
