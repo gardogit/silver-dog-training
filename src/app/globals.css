@@ -89,10 +89,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-orange);
+  background: var(--color-orange-500);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-lime);
+  background: var(--color-lime-500);
 }
