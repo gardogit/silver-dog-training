@@ -1,12 +1,15 @@
 import React from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
 import { brand } from '@/lib/design-system'
+import { cn } from '@/lib/utils';
 
 interface FloatingWhatsAppButtonProps {
-  message?: string
+  className?: string;
+  message?: string;
 }
 
 const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({
+  className,
   message = 'Hola, me interesa conocer más sobre sus servicios de adiestramiento canino'
 }) => {
   const whatsappUrl = `https://wa.me/${brand.contact.whatsapp}?text=${encodeURIComponent(message)}`
@@ -14,15 +17,20 @@ const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({
   return (
 
     <div
-      className="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex justify-center items-center shadow-lg hover:bg-green-600 transition-all duration-300 ease-out group z-50 hover:scale-105 active:scale-95"
-      aria-label="Contactar por WhatsApp"
+      className={cn(
+        "fixed bottom-6 right-6 z-50",
+        "bg-green-500 text-white w-14 h-14 rounded-full flex justify-center items-center shadow-lg",
+        "hover:bg-green-600 transition-all duration-300 ease-out group hover:scale-105 active:scale-95",
+        className
+      )}
+      data-testid="floating-whatsapp-button"
     >
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
         aria-label="Contactar por WhatsApp"
+        className="w-full h-full flex items-center justify-center"
       >
 
         <div className="absolute -right-1 -top-1 z-10">
