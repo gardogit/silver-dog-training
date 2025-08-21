@@ -20,9 +20,9 @@ export default function PoliticaPrivacidadPage() {
                         Bienvenido a Silver Dog Training. Tu privacidad es de suma importancia para nosotros. Esta Política de Privacidad describe cómo recopilamos, usamos, protegemos y compartimos tu información personal cuando visitas nuestro sitio web o utilizas nuestros servicios.
                     </p>
 
-                    {/* <p className="p-4 border-l-6 border-y-2 border-x-2 border-orange-400 bg-orange-50 text-orange-800">
+                     <p className="p-4 border-l-6 border-y-2 border-x-2 border-orange-400 bg-orange-50 text-orange-800">
                         <strong>Aviso Importante:</strong> Este documento es una plantilla genérica. Recomendamos encarecidamente que consultes con un profesional legal para asegurar que tu Política de Privacidad cumpla con todas las leyes y regulaciones aplicables a tu jurisdicción y modelo de negocio.
-                    </p> */}
+                    </p> 
 
                     <h2 className="text-2xl font-bold text-neutral-900">1. Información que Recopilamos</h2>
                     <p>
