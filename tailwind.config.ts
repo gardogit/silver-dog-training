@@ -8,36 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: {
-          DEFAULT: '#cb6622',
-          light: '#f9c4a2',
-          50: '#fef7f0',
-          100: '#fdeee0',
-          200: '#f9d4b8',
-          300: '#f5ba90',
-          400: '#f1a068',
-          500: '#cb6622',
-          600: '#b8581e',
-          700: '#a54a1a',
-          800: '#923c16',
-          900: '#7f2e12',
-        },
-        secondary: {
-          DEFAULT: '#4b5320',
-          light: '#abb155',
-          50: '#f7f8f0',
-          100: '#eff1e1',
-          200: '#dfe3c3',
-          300: '#cfd5a5',
-          400: '#bfc787',
-          500: '#abb155',
-          600: '#4b5320',
-          700: '#434a1d',
-          800: '#3b411a',
-          900: '#333817',
-        },
-      },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         heading: ['Inter', 'system-ui', 'sans-serif'],
