@@ -3,17 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { brand } from '@/lib/design-system'
-import {
-  HiMail,
-  HiLocationMarker,
-  HiCalendar
-} from 'react-icons/hi'
-import {
-  FaFacebook,
-  FaInstagram,
-  FaTiktok,
-  FaWhatsapp
-} from 'react-icons/fa'
+import { HiMail, HiLocationMarker, HiCalendar } from 'react-icons/hi'
+import { FaWhatsapp } from 'react-icons/fa'
+import { footerQuickLinks, socialMediaLinks } from '@/data/navigation.data'
 
 interface FooterProps {
   className?: string
@@ -21,35 +13,6 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
   const currentYear = new Date().getFullYear()
-
-  const socialLinks = [
-    {
-      name: 'Facebook',
-      href: `https://facebook.com/${brand.contact.social.facebook.replace('@', '')}`,
-      icon: FaFacebook,
-      label: brand.contact.social.facebook,
-    },
-    {
-      name: 'Instagram',
-      href: `https://instagram.com/${brand.contact.social.instagram.replace('@', '')}`,
-      icon: FaInstagram,
-      label: brand.contact.social.instagram,
-    },
-    {
-      name: 'TikTok',
-      href: `https://tiktok.com/${brand.contact.social.tiktok.replace('@', '')}`,
-      icon: FaTiktok,
-      label: brand.contact.social.tiktok,
-    },
-  ]
-
-  const quickLinks = [
-    { href: '/', label: 'Inicio' },
-    { href: '/nosotros', label: 'Nosotros' },
-    { href: '/cursos', label: 'Cursos' },
-    { href: '/contacto', label: 'Contacto' },
-    { href: '/politica-privacidad', label: 'Política de Privacidad' },
-  ]
 
   return (
     <footer className={cn(
@@ -76,12 +39,12 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                     priority
                     draggable="false"
                   />
-                  <div>
-                    <h3 className="text-xl font-bold text-white">{brand.name}</h3>
-                    <p className="text-sm text-neutral-400">Entrenamiento Canino Profesional</p>
-                  </div>
-                </Link>
-              </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">{brand.name}</h3>
+                  <p className="text-sm text-neutral-400">Entrenamiento Canino Profesional</p>
+                </div>
+              </Link>
+            </div>
             </div>
 
             <p className="text-xs text-neutral-300 mb-4 max-w-md">
@@ -95,8 +58,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
 
             {/* Social Media Links */}
             <div className="flex space-x-4">
-              {socialLinks.map((social) => {
-                const IconComponent = social.icon
+              {socialMediaLinks.map((social) => {
+                const Icon = social.icon;
                 return (
                   <a
                     key={social.name}
@@ -110,7 +73,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                     )}
                     aria-label={`Síguenos en ${social.name} (${social.label})`}
                   >
-                    <IconComponent className="w-5 h-5" />
+                    <Icon className="w-5 h-5" />
                   </a>
                 )
               })}
@@ -121,7 +84,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2">
-              {quickLinks.map((link) => (
+              {footerQuickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
