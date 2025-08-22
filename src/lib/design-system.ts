@@ -170,6 +170,6 @@ export const brand = {
   },
   desarrolladoPor: {
     name: 'Hydrogn',
-    url: 'https://hydrogn.vercel.app/',
+    url: 'https://hydrogn.app/',
   }
 } as const

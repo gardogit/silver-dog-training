@@ -16,7 +16,7 @@ jest.mock('@/lib/design-system', () => ({
       },
     },
     desarrolladoPor: {
-      url: 'https://hydrogn.vercel.app/',
+      url: 'https://hydrogn.app/',
     },
   },
 }));
@@ -107,7 +107,7 @@ describe('Footer Component', () => {
     expect(screen.getByText(/© 2024 Silver Dog Training. Todos los derechos reservados./i)).toBeInTheDocument();
     const devLink = screen.getByRole('link', { name: 'Hydrogn' });
     expect(devLink).toBeInTheDocument();
-    expect(devLink).toHaveAttribute('href', 'https://hydrogn.vercel.app/');
+    expect(devLink).toHaveAttribute('href', 'https://hydrogn.app/');
   });
 
   it('has proper semantic structure with correct headings', () => {
