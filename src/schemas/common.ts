@@ -20,7 +20,7 @@ export const PhoneSchema = z
   .string()
   .min(10, "Teléfono debe tener al menos 10 dígitos")
   .max(20, "Teléfono no puede exceder 20 caracteres")
-  .regex(/^[+\d\s-()]*$/, "El número de teléfono contiene caracteres inválidos")
+  .regex(phoneRegex, "El formato del número de teléfono es inválido")
 
 export const UrlSchema = z
   .string()
