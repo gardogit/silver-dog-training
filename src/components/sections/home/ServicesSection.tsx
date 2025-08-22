@@ -184,7 +184,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ className }) =
                         title="¿No estás seguro por dónde empezar?"
                         description="Déjanos tu correo electrónico y uno de nuestros expertos se pondrá en contacto contigo para una consulta gratuita y sin compromiso."
                         buttonText="Enviar"
-                        onSubmit={(email) => console.log('Email recibido:', email)}
                         privacyPolicyText={
                             <>
                                 Respetamos tu privacidad. Lee nuestra{' '}

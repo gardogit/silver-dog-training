@@ -75,7 +75,6 @@ export const AboutUsSection = () => {
                     title="Te invitamos a unirte a nuestra comunidad de amantes de los perros"
                     description="y a descubrir cómo podemos ayudarte a transformar la relación con tu fiel compañero. ¡Juntos, podemos educar guías, adiestrar perros y crear recuerdos inolvidables!"
                     buttonText="Enviar"
-                    onSubmit={(email) => console.log('Email recibido:', email)}
                     privacyPolicyText={
                         <>
                             Respetamos tu privacidad. Lee nuestra{' '}
