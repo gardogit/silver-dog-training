@@ -1,13 +1,11 @@
 import React from 'react';
 import { FaStethoscope, FaRoute, FaHome, FaCut, FaShoppingBag, FaCarrot } from 'react-icons/fa';
 
-// Definimos la interfaz para cada servicio
 export interface OtherServiceData {
     name: string;
     icon: React.ReactNode;
 }
 
-// Creamos el array con los datos
 export const otherServicesData: OtherServiceData[] = [
     {
         name: 'Veterinaria',

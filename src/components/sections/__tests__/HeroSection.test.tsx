@@ -2,12 +2,11 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { HeroSection } from '../home/HeroSection'
 
-// Mock de la configuración de la marca para que el test no dependa de ella
 jest.mock('@/lib/design-system', () => ({
   brand: {
     tagline: 'EDUCAMOS GUÍAS | ADIESTRAMOS PERROS | CREAMOS RECUERDOS',
     contact: {
-      whatsapp: '584243360955', // Un número de ejemplo
+      whatsapp: '584243360955',
     },
   },
 }));
@@ -64,8 +63,6 @@ describe('HeroSection Component', () => {
     
     expect(href).toContain('wa.me');
     expect(href).toContain('text=');
-    // --- CORRECCIÓN 1: Se eliminó encodeURIComponent ---
-    // Comprobamos el texto sin codificar, tal como está en el atributo href
     expect(href).toContain('Hola, me interesa conocer más sobre sus servicios de adiestramiento canino');
   });
 
@@ -94,18 +91,15 @@ describe('HeroSection Component', () => {
     const href = ctaButton.getAttribute('href')!;
     
     expect(href).toContain('text=');
-    // --- CORRECCIÓN 2: Se eliminó encodeURIComponent ---
     expect(href).toContain('Hola, me interesa conocer más sobre sus servicios de adiestramiento canino');
   });
 
   it('renders with responsive design classes', () => {
     const { container } = render(<HeroSection />);
     const section = container.querySelector('section');
-    // --- CORRECCIÓN 3: Se unieron las clases en un solo string ---
     expect(section).toHaveClass('h-screen -mt-16 pt-16');
     
     const title = screen.getByRole('heading', { level: 1 });
-    // --- CORRECCIÓN 4: Se unieron las clases en un solo string ---
     expect(title).toHaveClass('text-3xl sm:text-4xl font-black text-center text-white');
   });
 
@@ -123,7 +117,6 @@ describe('HeroSection Component', () => {
     const { container } = render(<HeroSection />);
     const gradientOverlay = container.querySelector('.bg-gradient-to-r');
     expect(gradientOverlay).toBeInTheDocument();
-    // --- CORRECCIÓN 5: Se unieron las clases en un solo string ---
     expect(gradientOverlay).toHaveClass('from-yellow-600/80 via-orange-500/70 to-orange-600/80');
   });
 });

@@ -96,7 +96,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isOpen, onToggle, i
     )
 }
 
-// --- 3. Componente Principal de la Sección de FAQs (MODIFICADO) ---
+// --- 3. Componente Principal de la Sección de FAQs ---
 interface FaqSectionProps {
     className?: string
 }

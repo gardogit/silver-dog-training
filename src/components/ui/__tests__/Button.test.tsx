@@ -13,17 +13,12 @@ describe('Button Component', () => {
     render(<Button>Click me</Button>);
     const button = screen.getByRole('button', { name: /click me/i });
     expect(button).toBeInTheDocument();
-    
-    // CORREGIDO: El default 'primary' ahora es 'bg-orange-500'
     expect(button).toHaveClass('bg-orange-500'); 
-    
-    // El default 'md' es 'h-10'
     expect(button).toHaveClass('h-10');
   });
 
   it('renders with different variants', () => {
     const { rerender } = render(<Button variant="primary">Primary</Button>);
-    // CORREGIDO: Se buscan las clases reales de Tailwind para cada variante
     expect(screen.getByRole('button')).toHaveClass('bg-orange-500');
 
     rerender(<Button variant="secondary">Secondary</Button>);
@@ -79,7 +74,6 @@ describe('Button Component', () => {
     const handleClick = jest.fn();
     render(<Button onClick={handleClick}>Clickable</Button>);
     
-    // MEJORADO: Usando userEvent para simular un clic más realista
     await user.click(screen.getByRole('button'));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
@@ -88,7 +82,6 @@ describe('Button Component', () => {
     const handleClick = jest.fn();
     render(<Button onClick={handleClick} disabled>Disabled</Button>);
     
-    // userEvent respeta el estado 'disabled' y no disparará el evento
     await user.click(screen.getByRole('button'));
     expect(handleClick).not.toHaveBeenCalled();
   });
@@ -118,7 +111,6 @@ describe('Button Component', () => {
     expect(button).toBeInTheDocument();
   });
 
-  // MEJORADO: Este test ahora simula correctamente la navegación por teclado
   it('supports keyboard navigation', async () => {
     const handleClick = jest.fn();
     render(<Button onClick={handleClick}>Keyboard</Button>);
@@ -127,7 +119,6 @@ describe('Button Component', () => {
     button.focus();
     expect(button).toHaveFocus();
     
-    // userEvent simula correctamente que 'Enter' y 'Space' disparan un clic en un botón
     await user.keyboard('{enter}');
     expect(handleClick).toHaveBeenCalledTimes(1);
 

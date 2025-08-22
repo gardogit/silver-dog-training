@@ -3,8 +3,6 @@ import { render, screen } from '@testing-library/react'
 import { CallToActionBanner } from '../CallToActionBanner'
 
 describe('CallToActionBanner', () => {
-  const mockOnSubmit = jest.fn()
-
   beforeEach(() => {
     jest.clearAllMocks()
   })
@@ -15,7 +13,6 @@ describe('CallToActionBanner', () => {
         title="Test Title"
         description="Test description"
         buttonText="Submit"
-        onSubmit={mockOnSubmit}
       />
     )
     
@@ -29,7 +26,6 @@ describe('CallToActionBanner', () => {
         title="Test Title"
         description="Test description"
         buttonText="Submit"
-        onSubmit={mockOnSubmit}
       />
     )
     
@@ -43,7 +39,6 @@ describe('CallToActionBanner', () => {
         title="Test Title"
         description="Test description"
         buttonText="Submit"
-        onSubmit={mockOnSubmit}
       />
     )
     
@@ -57,7 +52,6 @@ describe('CallToActionBanner', () => {
         title="Test Title"
         description="Test description"
         buttonText="Submit"
-        onSubmit={mockOnSubmit}
       />
     )
     
@@ -71,7 +65,6 @@ describe('CallToActionBanner', () => {
         title="Test Title"
         description="Test description"
         buttonText="Submit"
-        onSubmit={mockOnSubmit}
       />
     )
     

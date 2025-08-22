@@ -34,7 +34,6 @@ const itemVariants = {
 type SelectVariant = 'light' | 'dark';
 const SelectVariantContext = React.createContext<SelectVariant>('light');
 
-// --- 3. Actualizamos las Props para incluir la variante ---
 interface CustomSelectProps {
     name: string;
     value: string;
@@ -58,7 +57,6 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
     className,
     variant = 'light',
 }) => (
-    // --- 4. Proveemos la variante a través del Context ---
     <SelectVariantContext.Provider value={variant}>
         <Select.Root name={name} value={value} onValueChange={onValueChange} disabled={disabled}>
             <Select.Trigger
@@ -107,7 +105,6 @@ interface CustomSelectItemProps extends React.ComponentPropsWithoutRef<typeof Se
 
 export const CustomSelectItem = React.forwardRef<HTMLDivElement, CustomSelectItemProps>(
     ({ children, className, ...props }, forwardedRef) => {
-        // --- 5. Consumimos la variante desde el Context ---
         const variant = React.useContext(SelectVariantContext);
         const styles = itemVariants[variant];
 

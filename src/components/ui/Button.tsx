@@ -3,7 +3,6 @@ import { Slot } from '@radix-ui/react-slot'
 import { cn } from '@/lib/utils'
 import { ButtonVariant, ButtonSize } from '@/types/design-system'
 
-// ... (las interfaces y los objetos de variantes/tamaños no cambian) ...
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant
   size?: ButtonSize
@@ -18,7 +17,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const buttonVariants = {
   primary: 'bg-orange-500 border-2 border-orange-500 text-white hover:bg-orange-600 hover:border-orange-600 focus:ring-orange-500 focus:ring-2 focus:ring-offset-2',
   secondary: 'bg-orange-100 border-2 border-orange-100 text-orange-600 hover:bg-orange-200 hover:border-orange-200 focus:ring-orange-500 focus:ring-2 focus:ring-offset-2',
-  outline: 'border-2 border-orange-600 text-orange-600 bg-transparent hover:bg-primary-50 focus:ring-primary focus:ring-2 focus:ring-offset-2',
+  outline: 'border-2 border-orange-600 text-orange-600 bg-transparent hover:bg-orange-50 focus:ring-orange-500 focus:ring-2 focus:ring-offset-2',
   ghost: 'text-neutral-700 bg-transparent hover:bg-neutral-100 focus:ring-neutral-500 focus:ring-2 focus:ring-offset-2',
 }
 
@@ -55,8 +54,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className
     );
 
-    // --- REFACTORIZACIÓN A PRUEBA DE ERRORES ---
-    // Creamos el contenido interno del botón en una variable separada.
     const content = loading ? (
       <svg
         className="animate-spin h-4 w-4"

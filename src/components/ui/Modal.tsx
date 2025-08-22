@@ -5,8 +5,6 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { cn } from '@/lib/utils';
 import { FaTimes } from 'react-icons/fa';
 
-// --- 1. Definimos los estilos para cada variante ---
-
 const contentVariants = {
     light: 'border-neutral-200 bg-white',
     dark: 'border-neutral-800 bg-neutral-900 text-neutral-200',

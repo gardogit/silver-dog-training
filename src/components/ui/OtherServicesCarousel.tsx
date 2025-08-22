@@ -7,7 +7,6 @@ import { otherServicesData } from '@/data/otherServices.data';
 
 export const OtherServicesCarousel = () => {
     // Usamos el hook de Embla con el plugin de Autoplay
-    // Opciones: loop infinito, 3 segundos de espera, no se detiene al interactuar
     const [emblaRef] = useEmblaCarousel(
         { loop: true, align: 'start', slidesToScroll: 1 },
         [Autoplay({ delay: 2000, stopOnInteraction: false })]

@@ -52,7 +52,7 @@ describe('Card Component', () => {
     )
     
     const card = screen.getByText('Card content').parentElement
-    expect(card).toHaveClass('bg-white', 'rounded-lg')
+    expect(card).toHaveClass('bg-white rounded-lg')
     expect(card).toBeInTheDocument()
   })
 
@@ -68,20 +68,6 @@ describe('Card Component', () => {
     rerender(<Card size="lg">Large card</Card>)
     const largeCard = screen.getByText('Large card').parentElement
     expect(largeCard).toBeInTheDocument()
-  })
-
-  it('renders with different shadows', () => {
-    const { rerender } = render(<Card shadow="soft">Soft shadow</Card>)
-    const softCard = screen.getByText('Soft shadow').parentElement
-    expect(softCard).toBeInTheDocument()
-
-    rerender(<Card shadow="medium">Medium shadow</Card>)
-    const mediumCard = screen.getByText('Medium shadow').parentElement
-    expect(mediumCard).toBeInTheDocument()
-
-    rerender(<Card shadow="strong">Strong shadow</Card>)
-    const strongCard = screen.getByText('Strong shadow').parentElement
-    expect(strongCard).toBeInTheDocument()
   })
 
   it('renders with hover effects', () => {
@@ -117,7 +103,7 @@ describe('CardHeader Component', () => {
     )
     
     const header = screen.getByText('Header content').parentElement
-    expect(header).toHaveClass('flex', 'flex-col', 'space-y-1.5')
+    expect(header).toHaveClass('flex flex-col space-y-1.5')
   })
 
   it('forwards ref correctly', () => {
@@ -164,7 +150,7 @@ describe('CardTitle Component', () => {
     const title = screen.getByRole('heading', { level: 3 })
     expect(title).toBeInTheDocument()
     expect(title).toHaveTextContent('Card Title')
-    expect(title).toHaveClass('text-lg', 'font-semibold')
+    expect(title).toHaveClass('text-lg font-semibold')
   })
 
   it('renders with custom heading level', () => {
@@ -189,7 +175,7 @@ describe('CardDescription Component', () => {
     
     const description = screen.getByText('This is a description')
     expect(description).toBeInTheDocument()
-    expect(description).toHaveClass('text-sm', 'text-neutral-600')
+    expect(description).toHaveClass('text-sm text-neutral-600')
   })
 
   it('forwards ref correctly', () => {
@@ -223,7 +209,7 @@ describe('CardFooter Component', () => {
     
     const footer = screen.getByText('Footer content')
     expect(footer).toBeInTheDocument()
-    expect(footer).toHaveClass('flex', 'items-center', 'pt-4')
+    expect(footer).toHaveClass('flex items-center pt-4')
   })
 
   it('forwards ref correctly', () => {

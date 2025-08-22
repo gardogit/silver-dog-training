@@ -80,7 +80,6 @@ describe("ServicesSection", () => {
     expect(screen.getByText("Entrenamiento K9")).toBeInTheDocument();
   });
 
-  // --- CORRECCIÓN APLICADA AQUÍ ---
   it('navigates to courses page when "Más Información" button is clicked', async () => {
     render(<ServicesSection />);
 

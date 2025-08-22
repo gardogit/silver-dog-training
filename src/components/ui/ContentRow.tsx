@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 
-// --- Props que acepta el componente ---
 interface ContentRowProps {
     imageUrl: string;
     imageAlt: string;
@@ -10,7 +9,7 @@ interface ContentRowProps {
 }
 
 /**
- * Componente reutilizable para mostrar una fila con una imagen en una columna
+ * Componente para mostrar una fila con una imagen en una columna
  * y contenido dinámico en la otra, con la capacidad de alternar la posición.
  */
 export const ContentRow: React.FC<ContentRowProps> = ({ 
@@ -19,7 +18,6 @@ export const ContentRow: React.FC<ContentRowProps> = ({
     imagePosition = 'left', 
     children 
 }) => {
-    // Determina el orden de las columnas en pantallas medianas y grandes
     const orderClass = imagePosition === 'right' ? 'md:flex-row-reverse' : 'md:flex-row';
 
     return (
@@ -37,7 +35,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                 </div>
             </div>
 
-            {/* --- Columna del Contenido (inyectado a través de children) --- */}
+            {/* --- Columna del Contenido --- */}
             <div className="md:w-1/2 w-full flex items-center h-full">
                 {children}
             </div>

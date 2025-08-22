@@ -12,7 +12,6 @@ import { Package } from '@/data/courses.data';
 
 type TabKey = keyof typeof coursesData;
 
-// No necesitamos props, el componente es autónomo
 export const CoursesSection: React.FC = () => {
     const searchParams = useSearchParams();
     const tabFromUrl = searchParams.get('tab');
@@ -43,7 +42,6 @@ export const CoursesSection: React.FC = () => {
     const currentData = coursesData[activeTab];
 
     const renderContent = () => {
-        // Usamos "type guards" para que TypeScript sepa qué propiedades están disponibles.
         if ('packages' in currentData) {
             return (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

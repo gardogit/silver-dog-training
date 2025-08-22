@@ -130,7 +130,6 @@ export const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex -ml-4">
               {reviewsData.map((review) => (
-                // Cada slide necesita una base de tamaño y padding
                 <div
                   key={review.id}
                   className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4"
