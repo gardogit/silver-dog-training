@@ -97,6 +97,7 @@ describe("CustomSelect", () => {
         value=""
         onValueChange={mockOnValueChange}
         ariaLabel="Select option"
+        name="test"
       >
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
@@ -111,6 +112,7 @@ describe("CustomSelect", () => {
         onValueChange={mockOnValueChange}
         placeholder="Select an option..."
         ariaLabel="Select option"
+        name="test"
       >
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
@@ -124,6 +126,7 @@ describe("CustomSelect", () => {
         value=""
         onValueChange={mockOnValueChange}
         ariaLabel="Choose option"
+        name="test"
       >
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
@@ -138,6 +141,7 @@ describe("CustomSelect", () => {
         value=""
         onValueChange={mockOnValueChange}
         ariaLabel="Select option"
+        name="test"
         disabled
       >
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
@@ -149,7 +153,7 @@ describe("CustomSelect", () => {
 
   it("applies light variant styling by default", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
@@ -159,7 +163,7 @@ describe("CustomSelect", () => {
 
   it("applies dark variant styling when specified", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" variant="dark">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" variant="dark" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
@@ -169,7 +173,7 @@ describe("CustomSelect", () => {
 
   it("renders select items correctly", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
         <CustomSelectItem value="option2">Option 2</CustomSelectItem>
       </CustomSelect>
@@ -180,7 +184,7 @@ describe("CustomSelect", () => {
 
   it("renders icons correctly", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
@@ -190,7 +194,7 @@ describe("CustomSelect", () => {
 
   it("displays current value when provided", () => {
     render(
-      <CustomSelect value="option1" onValueChange={mockOnValueChange} ariaLabel="Select option">
+      <CustomSelect value="option1" onValueChange={mockOnValueChange} ariaLabel="Select option" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
@@ -199,7 +203,7 @@ describe("CustomSelect", () => {
 
   it("renders with custom className", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" className="custom-select-class">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" className="custom-select-class" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
@@ -209,7 +213,7 @@ describe("CustomSelect", () => {
 
   it("renders select content with proper structure", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
@@ -220,7 +224,7 @@ describe("CustomSelect", () => {
 
   it("applies correct styling to select content based on variant", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" variant="dark">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" variant="dark" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
@@ -230,7 +234,7 @@ describe("CustomSelect", () => {
 
   it("renders select items with proper styling based on variant", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" variant="light">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" variant="light" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
@@ -240,7 +244,7 @@ describe("CustomSelect", () => {
 
   it("has proper accessibility attributes", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
@@ -254,7 +258,7 @@ describe("CustomSelect", () => {
 
   it("renders select icon", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
@@ -263,7 +267,7 @@ describe("CustomSelect", () => {
 
   it("renders item indicators", () => {
     render(
-      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option">
+      <CustomSelect value="" onValueChange={mockOnValueChange} ariaLabel="Select option" name="test">
         <CustomSelectItem value="option1">Option 1</CustomSelectItem>
       </CustomSelect>
     );
