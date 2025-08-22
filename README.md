@@ -1,6 +1,6 @@
-## 🐕 Silver Dog Training - Un Concepto de Rediseño Web
-
 <div align="center">
+
+## 🐕 Silver Dog Training - Un Concepto de Rediseño Web
 
 **EDUCAMOS GUÍAS | ADIESTRAMOS PERROS | CREAMOS RECUERDOS**
 
@@ -9,6 +9,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
+👉 [![DEMO](https://img.shields.io/badge/Ver%20Demo-Clic%20Aqu%C3%AD-cb6622?style=for-the-badge&logo=vercel)](https://silver-dog-training.vercel.app/) 👈 
 </div>
 
 ## 📋 Descripción
@@ -169,7 +170,7 @@ Las contribuciones, sugerencias y feedback son siempre bienvenidos. Si ves algo 
 Si estás interesado en discutir este proyecto, hablar sobre una colaboración o tienes alguna consulta profesional, no dudes en contactarme.
 
 - Autor: Edgardo Mota.
-- [Mi Página](https://hydrogn.vercel.app/) de contacto y mis [Mis Servicios](https://hydrogn.vercel.app/servicios)
+- [Mi Página](https://hydrogn.app/) de contacto y mis [Mis Servicios](https://hydrogn.app/servicios)
 - [LinkedIn](https://www.linkedin.com/in/ruizedgardo/)
 - [Email](edgardo.irm@gmail.com)
 
