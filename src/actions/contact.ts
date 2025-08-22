@@ -66,7 +66,7 @@ export async function sendContactEmail(
     const mailOptions = {
       from: `"Silver Dog Web" <${process.env.GMAIL_EMAIL}>`, // Tu correo
       replyTo: email,
-      to: process.env.CONTACT_FORM_RECIPIENT, // El correo de destino
+      to: process.env.GMAIL_EMAIL, // El correo de destino es CONTACT_FORM_RECIPIENT. Por motivos de pruebas se usará el correo de Gmail.
       subject: `${subjectMap[subject] || subject}`,
       html: `
                 <div style="font-family: Arial, sans-serif; line-height: 1.6;">

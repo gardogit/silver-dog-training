@@ -39,7 +39,7 @@ export async function submitServiceRequest(
     await transporter.sendMail({
       from: `"Silver Dog Web" <${process.env.GMAIL_EMAIL}>`,
       replyTo: email, // Para que al responder, se le responda al usuario
-      to: process.env.CONTACT_FORM_RECIPIENT, // Variable de entorno del destinatario
+      to: process.env.GMAIL_EMAIL, // El correo de destino es CONTACT_FORM_RECIPIENT. Por motivos de pruebas se usará el correo de Gmail.
       subject: `${serviceName}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
