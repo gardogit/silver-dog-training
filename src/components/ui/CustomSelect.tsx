@@ -36,6 +36,7 @@ const SelectVariantContext = React.createContext<SelectVariant>('light');
 
 // --- 3. Actualizamos las Props para incluir la variante ---
 interface CustomSelectProps {
+    name: string;
     value: string;
     onValueChange: (value: string) => void;
     children: React.ReactNode;
@@ -47,6 +48,7 @@ interface CustomSelectProps {
 }
 
 export const CustomSelect: React.FC<CustomSelectProps> = ({
+    name,
     value,
     onValueChange,
     children,
@@ -58,7 +60,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
 }) => (
     // --- 4. Proveemos la variante a través del Context ---
     <SelectVariantContext.Provider value={variant}>
-        <Select.Root value={value} onValueChange={onValueChange} disabled={disabled}>
+        <Select.Root name={name} value={value} onValueChange={onValueChange} disabled={disabled}>
             <Select.Trigger
                 className={cn(
                     'group',

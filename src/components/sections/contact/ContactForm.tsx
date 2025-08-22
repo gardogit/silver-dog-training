@@ -86,6 +86,7 @@ export const ContactForm = () => {
                     placeholder="Selecciona un motivo de contacto..."
                     value={subject}
                     onValueChange={setSubject}
+                    name="subject"
                 >
                     {subjectOptions.map(option => (
                         <CustomSelectItem key={option.value} value={option.value}>
@@ -93,13 +94,6 @@ export const ContactForm = () => {
                         </CustomSelectItem>
                     ))}
                 </CustomSelect>
-
-                {/* Campo oculto para que la Server Action reciba el valor.
-                 Nota: He simplificado la gestión del `CustomSelect` para que
-                 funcione directamente con Server Actions. 
-                 Radix UI no expone un `name` prop directamente, así que necesitamos 
-                 un campo oculto para pasar el valor. */}
-                <input type="hidden" name="subject" value={subject} />
 
                 {state.errors?.subject && (
                     <p className="text-sm text-red-600 mt-1">{state.errors.subject[0]}</p>
