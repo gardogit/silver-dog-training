@@ -118,11 +118,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onLearnMore }) => {
 
                 <CardFooter className="flex-shrink-0 pt-4">
                     <Button
-                        variant="outline"
-                        size="md"
+                        variant="secondary"
+                        size="lg"
                         fullWidth
                         rightIcon={<FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />}
-                        className="group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300"
+                        className="group-hover:bg-orange-200 group-hover:border-orange-200 hover:border-orange-400 transition-all duration-300"
                         onClick={(e) => {
                             e.stopPropagation()
                             onLearnMore(service.type)
