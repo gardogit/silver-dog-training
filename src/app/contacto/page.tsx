@@ -29,6 +29,10 @@ export default function ContactPage() {
                             src="/images/conexion-humano-animal.webp"
                             alt="Entrenador canino trabajando con un perro"
                             fill
+                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                            style={{ objectFit: 'cover' }}
+                            quality={100}
+                            draggable="false"
                             className="transition-transform duration-500 hover:scale-105 object-cover"
                         />
                     </div>

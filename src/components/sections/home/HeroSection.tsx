@@ -97,6 +97,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
                 src="/images/silver-y-su-pastor-belga-malinois.webp"
                 alt="Yonathan Pérez con su pastor belga malinois"
                 fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className="object-contain object-left-bottom"
                 priority
                 draggable="false"

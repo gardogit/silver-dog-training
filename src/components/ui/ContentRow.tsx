@@ -28,9 +28,12 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                     <Image
                         src={imageUrl}
                         alt={imageAlt}
-                        layout="fill"
-                        objectFit="cover"
                         className="w-full h-full"
+                        fill
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                        style={{ objectFit: 'cover' }}
+                        quality={100}
+                        draggable="false"
                     />
                 </div>
             </div>
